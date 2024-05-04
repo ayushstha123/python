@@ -65,7 +65,7 @@ def rps():
 
         while(True):
             playagain=input("\n\n To play again press Y for yes and N for no")
-            if playagain.lower() not in ["y","q"]:
+            if playagain.lower() not in ["y","n"]:
                 return play_rps()
             else:
                 break
@@ -76,6 +76,7 @@ def rps():
             sys.exit("BYE BRO")
     return play_rps()
 
-rps()
+rock_paper_scissors=rps()
 
-
+if __name__ == '__main__':
+    rock_paper_scissors()
