@@ -39,7 +39,7 @@ def GN(name="PlayerOne"):
 
         gameResult=decide_winner(player,computer)
         print(gameResult)
-        print(f"your score: {player_wins}")
+        print(f"{name} score: {player_wins}")
         print(f"python's score: {python_wins}")
         nonlocal gamecount
         gamecount+=1
@@ -56,21 +56,23 @@ def GN(name="PlayerOne"):
             playGN()
         else:
             sys.exit()
-    playGN()
+    return playGN()
 
 
-if "__name__"=="__main__":
+if __name__ == '__main__':
     import argparse
 
-    parse=argparse.ArgumentParser(
+    parser=argparse.ArgumentParser(
         description="Provides a personalized game experience"
     )
-    parse.add_argument(
-        "-n","--name",metavar="name"
+    parser.add_argument(
+        "-n","--name",metavar="name",
         required=True,help="The name of the person playing the game"
     )
-    args=parse.parse_args()
 
-guess_number=GN(args.name)
-guess_number()
+    args=parser.parse_args()
+    guess_number=GN(args.name)
+    guess_number()
+
+
 
