@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Django server</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nemo esse magnam ad ea voluptate unde alias quod, ex id.</p>
-    <h1>Hello World</h1>
+    {{peoples}}
+    <table border="1" cellspacing="0">
+        <tr>
+            <th>S.no</th>
+
+
+            <th>Name</th>
+            <th>Age</th>
+            <th>who can vote</th>
+        </tr>
+        {%for people in peoples%}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{people.name}}</td>
+            <td>{{people.age}}</td>
+            <td>
+                {% if people.age > 18 %}
+                ✅
+                {%else%}
+                🚫
+                {%endif%}
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+<p>
+{%if 'cucumber' in vegetables%}
+yes its available
+{%elif 'brinjal' in vegetables%}
+yes its available
+{%else%}
+not available
+
+{%endif%}
+
+</p>
 </body>
+
 </html>
