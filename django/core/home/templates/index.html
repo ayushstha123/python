@@ -1,29 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>Django server</h1>
-    {{peoples}}
-    <table border="1" cellspacing="0">
-        <tr>
-            <th>S.no</th>
+{%extends "base.html" %}
+{%block start%}
 
 
-            <th>Name</th>
-            <th>Age</th>
-            <th>who can vote</th>
-        </tr>
-        {%for people in peoples%}
-        <tr>
-            <td>{{forloop.counter}}</td>
-            <td>{{people.name}}</td>
-            <td>{{people.age}}</td>
+<h1>this is index page</h1>
+<a href="/contacts">Contacts</a>
+<a href="/about">About us</a>
+
+<hr>
+
+
+{{peoples}}
+<table border="1" cellspacing="0">
+    <tr>
+        <th>S.no</th>
+        
+
+        <th>Name</th>
+        <th>Age</th>
+        <th>who can vote</th>
+    </tr>
+    {%for people in peoples%}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{people.name}}</td>
+        <td>{{people.age}}</td>
             <td>
                 {% if people.age > 18 %}
                 ✅
@@ -45,6 +45,5 @@ not available
 {%endif%}
 
 </p>
-</body>
 
-</html>
+{%endblock%}

@@ -14,3 +14,9 @@ def home(request):
 
     vegetables={'pumpkin','ladyfinger','brinjal','carrots'}
     return render(request,"index.html",context={'peoples':peoples,'vegetables':vegetables})
+
+def contacts(request):
+    return render(request,"contacts.html")
+
+def about(request):
+    return render(request,'aboutus.html')
