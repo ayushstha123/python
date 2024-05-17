@@ -28,3 +28,4 @@ def studentList(request):
 def student_page(request,slug):
     student=Student.objects.get(slug=slug)
     return render(request,'student_page.html',{'student':student})
+

@@ -1,0 +1,10 @@
+
+{%block start%}
+<h1>Register</h1>
+<hr>
+<form action="/users/register/" method="post">
+{%csrf_token%}  
+  {{form}}
+<button>Submit</button>
+</form>
+{%endblock%}

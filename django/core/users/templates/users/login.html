@@ -1,0 +1,10 @@
+
+{%block start%}
+<h1>Login</h1>
+<hr>
+<form action="/users/login/" method="post">
+{%csrf_token%}  
+  {{form}}
+<button>Submit</button>
+</form>
+{%endblock%}
