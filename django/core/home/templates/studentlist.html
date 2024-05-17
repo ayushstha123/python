@@ -1,0 +1,15 @@
+
+{%block start%}
+<h1>Students</h1>
+<hr>
+{%for student in students%}
+<article>
+<h2>
+<a href="{%url 'page' slug=student.slug %}">
+    {{student.title}}
+</a>
+</h2>
+<p>{{student.body}}</p>
+</article>
+{%endfor%}
+{%endblock%}

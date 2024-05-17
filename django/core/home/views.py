@@ -21,3 +21,10 @@ def contacts(request):
 
 def about(request):
     return render(request,'aboutus.html')
+
+def studentList(request):
+    students=Student.objects.all().order_by('-date')
+    return render(request,'studentlist.html',{'students':students})
+def student_page(request,slug):
+    student=Student.objects.get(slug=slug)
+    return render(request,'student_page.html',{'student':student})
