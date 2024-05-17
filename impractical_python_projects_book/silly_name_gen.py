@@ -1,3 +1,5 @@
+"""Generate funny names by randomly combining names from two separate lists."""
+
 import random
 
 # Create a list of first and last names
@@ -7,7 +9,7 @@ LAST_NAME = ['Prasad', 'Kumar', 'Dullah', 'Kalumba', 'Ghiyampey', 'Sutta', 'Takl
 def play_game():
     """Function to play the name generation game.""" #DOCSTRINGS helps other and you to understand your code easier
     while True:
-        # Generate a random name
+        # Generate a random namen
         random_fnames = random.choice(FIRST_NAME)
         random_lnames = random.choice(LAST_NAME)
         print(random_fnames + " " + random_lnames)
